@@ -1,22 +1,53 @@
-# Talk to Code With AI!
- 
-## Use
+# Talk to Code
 
-Create a .env file and add a repo and Gemini API key:
+Talk to Code is a Python-based tool that allows you to have a conversation with any GitHub repository. By cloning the repository and processing its contents, it enables you to ask questions about the codebase and receive AI-generated explanations and insights using Google's Gemini model.
 
-Here is where to get your own [api key](https://aistudio.google.com/app/apikey) (free for the basic model)
+## Features
 
-Go to any GitHub repo and copy the URL to get the link EX: [https://github.com/aidankeighron/talk-to-code](https://github.com/aidankeighron/talk-to-code)
+-   **Repo Cloning**: Automatically clones any public GitHub repository.
+-   **Codebase Analysis**: Ingests the entire file structure and content for context.
+-   **Interactive Chat**: Ask questions about the code in natural language.
+-   **Markdown Output**: Saves detailed responses to `output.md` for easy reading.
 
-Example .env:
+## Prerequisites
 
-```env
-GITHUB_REPO=https://github.com/aidankeighron/alchemy
-GEMINI_API_KEY=SUPERCOOLAPIKEY
-```
+-   Python 3.8 or higher
+-   Git installed and accessible in your terminal
+-   A Google Gemini API Key
 
-Run `main.py` to ask the AI a question
+## Installation
 
-Answer is outputted to `output.md` (in VS Code you can right-click on the file and select "Open Preview" to render the markdown)
+1.  Clone this repository:
+    ```bash
+    git clone https://github.com/aidankeighron/talk-to-code
+    cd talk-to-code
+    ```
 
-**Feel free to create a pull request to add a new feature**
+2.  Install the required dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Configuration
+
+1.  Create a `.env` file in the project root.
+2.  Add your GitHub repository URL and Gemini API key:
+
+    ```env
+    GITHUB_REPO=https://github.com/username/repository
+    GEMINI_API_KEY=your_api_key_here
+    ```
+
+    > You can get a free Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
+
+## Usage
+
+1.  Run the main script:
+    ```bash
+    python main.py
+    ```
+
+2.  Wait for the repository to be cloned and processed.
+3.  Enter your questions when prompted.
+4.  Type `q` to exit the program.
+5.  View the answers in the generated `output.md` file.
